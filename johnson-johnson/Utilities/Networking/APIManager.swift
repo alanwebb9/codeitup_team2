@@ -11,9 +11,17 @@ import SwiftyJSON
 
 class APIManager {
 
+    static func getDetails(params : [String : Any], completion: ((JSON?, Error?)->())?){
+
+        NetworkingManager.GET(endPoint: .getDetails, parameters: params, headers : headers, success: { (dict) in
+            completion?(JSON(dict), nil)
+        }) { (error) in
+            completion?(nil, error)
+        }
+    }
+
     static var headers : [String : String]{
 
         return ["":""]
     }
-
 }

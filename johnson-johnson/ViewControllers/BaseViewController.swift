@@ -23,6 +23,15 @@ class BaseViewController: UIViewController, AlertProtocol {
         super.viewDidLoad()
 
         indicator = MRActivityIndicator(on: view, withText: "")
+
+//        APIManager.getDetails(params: [:]) { (json, error) in
+//
+//            if let tempJson = json{
+//                print(tempJson)
+//            }else{
+//                print(error?.localizedDescription)
+//            }
+//        }
     }
 
     override var prefersStatusBarHidden: Bool{
