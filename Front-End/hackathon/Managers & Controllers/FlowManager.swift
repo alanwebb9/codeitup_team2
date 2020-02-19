@@ -28,7 +28,6 @@ class FlowManager{
 
     static func clearAllData(){
 
-        UserModel.current = UserModel()
         Defaults.removeValue(forKey: .userInfo)
     }
 }

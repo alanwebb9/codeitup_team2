@@ -21,6 +21,7 @@ class HomeViewModel{
         case fireStations = 1
         case hospitals = 2
         case pharmacy = 3
+        case garda = 4
 
         var text : String{
             switch self{
@@ -28,6 +29,7 @@ class HomeViewModel{
             case .fireStations : return StringConstants.fireStations.localized
             case .hospitals : return StringConstants.hospitals.localized
             case .pharmacy : return StringConstants.pharmacy.localized
+            case .garda : return StringConstants.garda.localized
             }
         }
     }
@@ -36,8 +38,21 @@ class HomeViewModel{
     var pinDataArray = [AnnotationData]()
     var type = DataType.all
 
+    private var fireStations = [FireStationModel]()
+    private var hospitals = [HospitalModel]()
+    private var pharmacy = [PharmacyModel]()
+    private var garda = [GardaModel]()
+    private var all = [AnnotationData]()
+
     init(){
         readFromFireStationCSV()
+        readFromHospitals()
+        readGarda()
+        readPharmacy()
+        all.append(contentsOf: fireStations)
+        all.append(contentsOf: hospitals)
+        all.append(contentsOf: pharmacy)
+        all.append(contentsOf: garda)
     }
 
     func nextType() -> DataType{
@@ -71,9 +86,15 @@ class HomeViewModel{
 
         switch type {
         case .fireStations:
-            readFromFireStationCSV()
+            pinDataArray = fireStations
+        case .hospitals:
+            pinDataArray = hospitals
+        case .garda:
+            pinDataArray = garda
+        case .pharmacy:
+            pinDataArray = pharmacy
         default:
-            pinDataArray = []
+            pinDataArray = all
         }
 
         delegate?.reloadData()
@@ -86,7 +107,46 @@ class HomeViewModel{
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
                 if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
                     if let jsonResult = jsonResult as? [[String : Any]]{
-                        pinDataArray = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                        fireStations = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                    }
+                }
+            }
+        }
+    }
+
+    private func readFromHospitals(){
+
+        if let path = Bundle.main.path(forResource: "hospitals", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        hospitals = JSON(jsonResult).arrayValue.map{HospitalModel(json: $0)}
+                    }
+                }
+            }
+        }
+    }
+
+    private func readPharmacy(){
+
+        if let path = Bundle.main.path(forResource: "pharmacy", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        pharmacy = JSON(jsonResult).arrayValue.map{PharmacyModel(json: $0)}
+                    }
+                }
+            }
+        }
+    }
+
+    private func readGarda(){
+
+        if let path = Bundle.main.path(forResource: "garda", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        garda = JSON(jsonResult).arrayValue.map{GardaModel(json: $0)}
                     }
                 }
             }

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mayank Rikh. All rights reserved.
 //
 
+import MaterialShowcase
 import FontAwesome_swift
 import Contacts
 import MapKit
@@ -13,6 +14,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var rippleView: MRRippleView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var emergencyButton: UIButton!
     @IBOutlet weak var typeTextField: UITextField!
@@ -24,10 +26,11 @@ class HomeViewController: BaseViewController {
     private var workItem : DispatchWorkItem?
     private var coordinate : CLLocationCoordinate2D?
     private let radius = 20000.0
+    private var timer : Timer?
+    private var firstTime = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initialSetup()
     }
 
@@ -35,6 +38,16 @@ class HomeViewController: BaseViewController {
 
         super.viewDidLayoutSubviews()
         emergencyButton.layer.cornerRadius = emergencyButton.bounds.height/2.0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+        if firstTime{
+            viewModel.updateData()
+            Utilities.showTutorial(on: emergencyButton, primaryText: "Emergency Button!", secondaryText: "Press and hold for 3 seconds to send a message to the cops!", isCircle: true, delegate: self, uniqueIdentifier: 0, completion: nil)
+            firstTime = false
+        }
     }
 
     //MARK:- IBAction
@@ -46,9 +59,31 @@ class HomeViewController: BaseViewController {
         updateTitle(type: viewModel.nextType())
     }
 
+    @IBAction func touchDownEmergency(_ sender: UIButton) {
+        rippleView.start = true
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { [weak self] (timer) in
+            self?.stopEmergency()
+            self?.showAlert(StringConstants.success.localized, withMessage: StringConstants.successBroadcast.localized, withCompletion: nil)
+        })
+    }
+
+    @IBAction func touchUpEmergency(_ sender: UIButton) {
+        stopEmergency()
+    }
+
+    @IBAction func touchUpOutsideEmergency(_ sender: UIButton) {
+        stopEmergency()
+    }
+
     //MARK:- Private
     private func updateTitle(type : HomeViewModel.DataType){
         typeTextField.text = type.text
+    }
+
+    private func stopEmergency(){
+        rippleView.start = false
+        timer?.invalidate()
+        timer = nil
     }
 
     private func initialSetup(){
@@ -170,5 +205,13 @@ extension HomeViewController : MKMapViewDelegate{
         let placemark = MKPlacemark(coordinate: location.coordinate, addressDictionary: [CNPostalAddressStreetKey : location.subtitle ?? ""])
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: launchOptions)
+    }
+}
+
+extension HomeViewController : MaterialShowcaseDelegate{
+
+    func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+
+
     }
 }

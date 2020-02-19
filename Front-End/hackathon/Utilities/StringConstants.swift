@@ -15,6 +15,8 @@ struct StringConstants{
     static let fireStations = "fireStations"
     static let hospitals = "hospitals"
     static let pharmacy = "pharmacy"
+    static let successBroadcast = "successBroadcast"
+    static let garda = "garda"
 
     //General
     static let something_wrong = "something_wrong"

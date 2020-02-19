@@ -8,6 +8,7 @@ target 'hackathon' do
   use_frameworks!
 
 pod 'FontAwesome.swift'
+pod 'MaterialShowcase'
 pod 'DZNEmptyDataSet'
 pod 'SDWebImage'
 pod 'SwiftyJSON'
