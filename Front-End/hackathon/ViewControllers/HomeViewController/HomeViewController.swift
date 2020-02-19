@@ -6,11 +6,16 @@
 //  Copyright © 2020 Mayank Rikh. All rights reserved.
 //
 
+import FontAwesome_swift
 import MapKit
 import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var emergencyButton: UIButton!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var mapView : MKMapView!
 
     private var workItem : DispatchWorkItem?
@@ -23,11 +28,24 @@ class HomeViewController: BaseViewController {
         initialSetup()
     }
 
+    //MARK:- IBAction
+    @IBAction func leftAction(_ sender: UIButton) {
+
+    }
+
+    @IBAction func rightAction(_ sender: UIButton) {
+
+    }
+
     //MARK:- Private
     private func initialSetup(){
 
         navigationController?.setNavigationBarHidden(true, animated: true)
         LocationManager.shared.delegate = self
+        mapView.showsUserLocation = true
+
+        configureSideButton(button : leftButton, text : FontAwesome.arrowLeft)
+        configureSideButton(button : rightButton, text : FontAwesome.arrowRight)
 
         if let coordinate = self.coordinate{
             focus(coordinate: coordinate, title: nil, subTitle: nil)
@@ -39,6 +57,14 @@ class HomeViewController: BaseViewController {
                 }
             }
         }
+    }
+
+    private func configureSideButton(button : UIButton, text : FontAwesome){
+
+        let leftText = String.fontAwesomeIcon(name: text)
+        button.setTitle(leftText, for: .normal)
+        button.setTitleColor(Colors.black, for: .normal)
+        button.titleLabel?.font = UIFont.fontAwesome(ofSize: 25.0, style: .regular)
     }
 
     private func show(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
