@@ -39,6 +39,9 @@
 		4604F34923FD9EAC00E13FBF /* PharmacyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F34823FD9EAC00E13FBF /* PharmacyModel.swift */; };
 		4604F34B23FD9F7800E13FBF /* garda.json in Resources */ = {isa = PBXBuildFile; fileRef = 4604F34A23FD9F7800E13FBF /* garda.json */; };
 		4604F34D23FD9F8600E13FBF /* GardaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F34C23FD9F8600E13FBF /* GardaModel.swift */; };
+		4604F35223FDB74900E13FBF /* APIManager + EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F34F23FDB74900E13FBF /* APIManager + EndPoints.swift */; };
+		4604F35323FDB74900E13FBF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F35023FDB74900E13FBF /* APIManager.swift */; };
+		4604F35423FDB74900E13FBF /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F35123FDB74900E13FBF /* NetworkingManager.swift */; };
 		A88EDCB39CD9AE1649611B3E /* Pods_hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +81,9 @@
 		4604F34823FD9EAC00E13FBF /* PharmacyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PharmacyModel.swift; sourceTree = "<group>"; };
 		4604F34A23FD9F7800E13FBF /* garda.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = garda.json; sourceTree = "<group>"; };
 		4604F34C23FD9F8600E13FBF /* GardaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardaModel.swift; sourceTree = "<group>"; };
+		4604F34F23FDB74900E13FBF /* APIManager + EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIManager + EndPoints.swift"; sourceTree = "<group>"; };
+		4604F35023FDB74900E13FBF /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4604F35123FDB74900E13FBF /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		46A331F621FB80AD00890F1A /* hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC6E150F4D6CA33BAE8295 /* Pods-hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackathon.release.xcconfig"; path = "Target Support Files/Pods-hackathon/Pods-hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +150,7 @@
 		4604F2EA23FD5BA300E13FBF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4604F34E23FDB74900E13FBF /* Networking */,
 				4604F30223FD5BA300E13FBF /* Custom Classes */,
 				4604F2FA23FD5BA300E13FBF /* Genral Extensions */,
 				4604F2EB23FD5BA300E13FBF /* General Protocols */,
@@ -224,6 +231,16 @@
 				4604F34C23FD9F8600E13FBF /* GardaModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4604F34E23FDB74900E13FBF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4604F34F23FDB74900E13FBF /* APIManager + EndPoints.swift */,
+				4604F35023FDB74900E13FBF /* APIManager.swift */,
+				4604F35123FDB74900E13FBF /* NetworkingManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		46A331ED21FB80AD00890F1A = {
@@ -392,6 +409,7 @@
 				4604F31823FD5BA300E13FBF /* AlertProtocol.swift in Sources */,
 				4604F32C23FD5BA300E13FBF /* BaseProtocol.swift in Sources */,
 				4604F34923FD9EAC00E13FBF /* PharmacyModel.swift in Sources */,
+				4604F35323FDB74900E13FBF /* APIManager.swift in Sources */,
 				4604F32423FD5BA300E13FBF /* View+GeneralEnhancements.swift in Sources */,
 				4604F33D23FD7D7700E13FBF /* FireStationModel.swift in Sources */,
 				4604F32723FD5BA300E13FBF /* Storyboards.swift in Sources */,
@@ -404,6 +422,8 @@
 				4604F32923FD5BA300E13FBF /* MRActivityIndicator.m in Sources */,
 				4604F32D23FD5BA300E13FBF /* AppDelegate.swift in Sources */,
 				4604F32B23FD5BA300E13FBF /* BaseViewController.swift in Sources */,
+				4604F35223FDB74900E13FBF /* APIManager + EndPoints.swift in Sources */,
+				4604F35423FDB74900E13FBF /* NetworkingManager.swift in Sources */,
 				4604F32123FD5BA300E13FBF /* CustomFonts.swift in Sources */,
 				4604F34523FD9BC400E13FBF /* HospitalModel.swift in Sources */,
 			);
