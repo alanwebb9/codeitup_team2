@@ -25,6 +25,7 @@ class HomeViewController: BaseViewController {
     private var workItem : DispatchWorkItem?
     private var coordinate : CLLocationCoordinate2D?
     private let radius = 20000.0
+    private var timer : Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,20 +50,30 @@ class HomeViewController: BaseViewController {
 
     @IBAction func touchDownEmergency(_ sender: UIButton) {
         rippleView.start = true
+        timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { [weak self] (timer) in
+            self?.stopEmergency()
+            self?.showAlert(StringConstants.success.localized, withMessage: StringConstants.successBroadcast.localized, withCompletion: nil)
+        })
     }
 
     @IBAction func touchUpEmergency(_ sender: UIButton) {
-        rippleView.start = false
+        stopEmergency()
     }
 
     @IBAction func touchUpOutsideEmergency(_ sender: UIButton) {
-        rippleView.start = false
+        stopEmergency()
     }
 
 
     //MARK:- Private
     private func updateTitle(type : HomeViewModel.DataType){
         typeTextField.text = type.text
+    }
+
+    private func stopEmergency(){
+        rippleView.start = false
+        timer?.invalidate()
+        timer = nil
     }
 
     private func initialSetup(){

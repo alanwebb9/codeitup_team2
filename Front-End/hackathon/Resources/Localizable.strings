@@ -11,6 +11,7 @@
 "fireStations" = "Fire Station";
 "hospitals" = "Hospitals";
 "pharmacy" = "Pharmacies";
+"successBroadcast" = "Successfully broadcasted your request to the Garda";
 
 //General
 "something_wrong" = "Something went wrong";
