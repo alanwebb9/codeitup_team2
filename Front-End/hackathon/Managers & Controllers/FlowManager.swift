@@ -13,9 +13,7 @@ class FlowManager{
     /// This method will check various properties to determine which screen we need to open.
     static func checkAppInitializationFlow(){
 
-        if let _ = Defaults.value(forKey: Defaults.Key.userInfo){
-            //user exists
-        }
+
     }
 
     static func createNavigationController(_ viewController : UIViewController) -> UINavigationController{
@@ -28,6 +26,6 @@ class FlowManager{
 
     static func clearAllData(){
 
-        Defaults.removeValue(forKey: .userInfo)
+        
     }
 }
