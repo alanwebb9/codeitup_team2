@@ -18,10 +18,10 @@ class HomeViewModel{
 
         var text : String{
             switch self{
-                case .all : return "All"
-                case .fireStations : return "Fire Stations"
-                case .hospitals : return "Hospitals"
-                case .pharmacy : return "Pharmacy"
+            case .all : return StringConstants.all.localized
+            case .fireStations : return StringConstants.fireStations.localized
+            case .hospitals : return StringConstants.hospitals.localized
+            case .pharmacy : StringConstants.pharmacy.localized
             }
         }
     }
