@@ -12,6 +12,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var emergencyButton: UIButton!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var rightButton: UIButton!
@@ -40,6 +41,11 @@ class HomeViewController: BaseViewController {
     //MARK:- Private
     private func initialSetup(){
 
+        titleView.backgroundColor = Colors.clear
+        typeTextField.backgroundColor = Colors.white
+        typeTextField.layer.cornerRadius = 10.0
+        titleView.addShadow(3.0)
+
         navigationController?.setNavigationBarHidden(true, animated: true)
         LocationManager.shared.delegate = self
         mapView.showsUserLocation = true
@@ -64,7 +70,8 @@ class HomeViewController: BaseViewController {
         let leftText = String.fontAwesomeIcon(name: text)
         button.setTitle(leftText, for: .normal)
         button.setTitleColor(Colors.black, for: .normal)
-        button.titleLabel?.font = UIFont.fontAwesome(ofSize: 25.0, style: .regular)
+        button.titleLabel?.font = UIFont.fontAwesome(ofSize: 20.0, style: .solid)
+        button.backgroundColor = Colors.clear
     }
 
     private func show(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
