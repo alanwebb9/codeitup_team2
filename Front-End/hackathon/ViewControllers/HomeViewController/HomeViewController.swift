@@ -67,6 +67,8 @@ class HomeViewController: BaseViewController {
         LocationManager.shared.delegate = self
         mapView.showsUserLocation = true
 
+        viewModel.delegate = self
+
         configureSideButton(button : leftButton, text : FontAwesome.arrowLeft)
         configureSideButton(button : rightButton, text : FontAwesome.arrowRight)
 
@@ -108,9 +110,10 @@ class HomeViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: item)
     }
 
+
+
     private func dropPin(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
 
-        mapView.removeAnnotations(mapView.annotations)
         let annotation = Annotation(title: title, subTitle: subTitle, coordinate: coordinate)
         mapView.addAnnotation(annotation)
     }
@@ -127,4 +130,12 @@ extension HomeViewController : LocationManagerDelegate{
     }
 
     func locationFetchError() {}
+}
+
+extension HomeViewController : HomeViewModelDelegate{
+
+    func reloadData() {
+
+        
+    }
 }

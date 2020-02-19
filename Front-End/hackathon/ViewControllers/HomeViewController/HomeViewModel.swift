@@ -6,7 +6,13 @@
 //  Copyright © 2020 Mayank Rikh. All rights reserved.
 //
 
+import SwiftyJSON
 import Foundation
+
+protocol HomeViewModelDelegate : class{
+
+    func reloadData()
+}
 
 class HomeViewModel{
 
@@ -26,7 +32,22 @@ class HomeViewModel{
         }
     }
 
+    var delegate : HomeViewModelDelegate?
+    private var pinDataArray = [AnnotationData]()
     var type = DataType.all
+
+    init(){
+
+        if let path = Bundle.main.path(forResource: "fireStation", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        pinDataArray = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                    }
+                }
+            }
+        }
+    }
 
     func nextType() -> DataType{
 
@@ -37,7 +58,7 @@ class HomeViewModel{
         }else{
             self.type = DataType.init(rawValue: self.type.rawValue + 1) ?? .all
         }
-
+        delegate?.reloadData()
         return self.type
     }
 
@@ -50,7 +71,7 @@ class HomeViewModel{
         }else{
             self.type = DataType.init(rawValue: self.type.rawValue - 1) ?? .all
         }
-
+        delegate?.reloadData()
         return self.type
     }
 }
