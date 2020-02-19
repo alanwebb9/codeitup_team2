@@ -42,12 +42,17 @@ class HomeViewModel{
     private var hospitals = [HospitalModel]()
     private var pharmacy = [PharmacyModel]()
     private var garda = [GardaModel]()
+    private var all = [AnnotationData]()
 
     init(){
         readFromFireStationCSV()
         readFromHospitals()
         readGarda()
         readPharmacy()
+        all.append(contentsOf: fireStations)
+        all.append(contentsOf: hospitals)
+        all.append(contentsOf: pharmacy)
+        all.append(contentsOf: garda)
     }
 
     func nextType() -> DataType{
