@@ -40,6 +40,8 @@
 		4604F32D23FD5BA300E13FBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F30B23FD5BA300E13FBF /* AppDelegate.swift */; };
 		4604F32E23FD5BA300E13FBF /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F30D23FD5BA300E13FBF /* UserModel.swift */; };
 		4604F33223FD5F3300E13FBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33123FD5F3300E13FBF /* HomeViewController.swift */; };
+		4604F33423FD617400E13FBF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33323FD617300E13FBF /* LocationManager.swift */; };
+		4604F33723FD647A00E13FBF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33623FD647A00E13FBF /* Annotation.swift */; };
 		A88EDCB39CD9AE1649611B3E /* Pods_hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		4604F30D23FD5BA300E13FBF /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4604F32F23FD5CBA00E13FBF /* hackathon-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "hackathon-Bridging-Header.h"; sourceTree = "<group>"; };
 		4604F33123FD5F3300E13FBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4604F33323FD617300E13FBF /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4604F33623FD647A00E13FBF /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		46A331F621FB80AD00890F1A /* hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC6E150F4D6CA33BAE8295 /* Pods-hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackathon.release.xcconfig"; path = "Target Support Files/Pods-hackathon/Pods-hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,16 +148,17 @@
 		4604F2EA23FD5BA300E13FBF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4604F30223FD5BA300E13FBF /* Custom Classes */,
+				4604F2FA23FD5BA300E13FBF /* Genral Extensions */,
+				4604F2F523FD5BA300E13FBF /* Networking */,
 				4604F2EB23FD5BA300E13FBF /* General Protocols */,
 				4604F2F223FD5BA300E13FBF /* Constants.swift */,
+				4604F33323FD617300E13FBF /* LocationManager.swift */,
 				4604F2F323FD5BA300E13FBF /* Utilities.swift */,
 				4604F2F423FD5BA300E13FBF /* StringConstants.swift */,
-				4604F2F523FD5BA300E13FBF /* Networking */,
 				4604F2F923FD5BA300E13FBF /* CustomFonts.swift */,
-				4604F2FA23FD5BA300E13FBF /* Genral Extensions */,
 				4604F30023FD5BA300E13FBF /* Storyboards.swift */,
 				4604F30123FD5BA300E13FBF /* Defaults.swift */,
-				4604F30223FD5BA300E13FBF /* Custom Classes */,
 				4604F30623FD5BA300E13FBF /* Colors.swift */,
 			);
 			path = Utilities;
@@ -232,9 +237,18 @@
 		4604F33023FD5F2100E13FBF /* HomeViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4604F33523FD647500E13FBF /* Model */,
 				4604F33123FD5F3300E13FBF /* HomeViewController.swift */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		4604F33523FD647500E13FBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4604F33623FD647A00E13FBF /* Annotation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		46A331ED21FB80AD00890F1A = {
@@ -390,6 +404,7 @@
 			files = (
 				4604F31923FD5BA300E13FBF /* KeyboardHandler.swift in Sources */,
 				4604F32A23FD5BA300E13FBF /* Colors.swift in Sources */,
+				4604F33423FD617400E13FBF /* LocationManager.swift in Sources */,
 				4604F32523FD5BA300E13FBF /* String+General.swift in Sources */,
 				4604F31D23FD5BA300E13FBF /* StringConstants.swift in Sources */,
 				4604F31A23FD5BA300E13FBF /* AuthorizationProtocol.swift in Sources */,
@@ -399,6 +414,7 @@
 				4604F32723FD5BA300E13FBF /* Storyboards.swift in Sources */,
 				4604F32623FD5BA300E13FBF /* UIViewController + General.swift in Sources */,
 				4604F32323FD5BA300E13FBF /* UITextField + General.swift in Sources */,
+				4604F33723FD647A00E13FBF /* Annotation.swift in Sources */,
 				4604F31423FD5BA300E13FBF /* ValidationController.swift in Sources */,
 				4604F31323FD5BA300E13FBF /* FlowManager.swift in Sources */,
 				4604F32223FD5BA300E13FBF /* UIImageView + Download.swift in Sources */,
