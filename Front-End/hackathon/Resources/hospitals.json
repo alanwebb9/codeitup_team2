@@ -1,0 +1,268 @@
+[
+  {
+    "name": "Midland Regional Hospital Portlaoise",
+    "address": "Dublin Road, Portlaoise, Co. Laois,",
+    "eircode": "R32RW61",
+    "x": 248539.8285,
+    "y": 198821.7809
+  },
+  {
+    "name": "Midland Regional Hospital Tullamore",
+    "address": "Arden Road, Tullamore, Co. Offaly,",
+    "eircode": "R35NY51",
+    "x": 233923.1455,
+    "y": 225877.1039
+  },
+  {
+    "name": "St James's Hospital Dublin",
+    "address": "James's Street, Dublin 8,",
+    "eircode": "D08NHY1",
+    "x": 313433.6436,
+    "y": 233460.873
+  },
+  {
+    "name": "Naas General Hospital",
+    "address": "Craddockstown Road, Naas, Co. Kildare,",
+    "eircode": "W91AE76",
+    "x": 289392.2816,
+    "y": 218724.4999
+  },
+  {
+    "name": "The Adelaide & Meath Hospital (Tallaght Hospital) Dublin",
+    "address": "Tallaght, Dublin 24",
+    "eircode": "",
+    "x": 308195.7986,
+    "y": 227903.5429
+  },
+  {
+    "name": "Cavan General Hospital",
+    "address": "Lisdarn, Cavan,",
+    "eircode": "H12A5D7",
+    "x": 241108.2195,
+    "y": 305926.719
+  },
+  {
+    "name": "Louth County Hospital Dundalk",
+    "address": "Dublin Road, Dundalk",
+    "eircode": "",
+    "x": 304933.9162,
+    "y": 305486.799
+  },
+  {
+    "name": "Monaghan Hospital",
+    "address": "Monaghan,",
+    "eircode": "H18NV91",
+    "x": 266828.5975,
+    "y": 333908.8821
+  },
+  {
+    "name": "Our Lady of Lourdes Hospital Drogheda",
+    "address": "Drogheda, Co. Louth,",
+    "eircode": "A92VW28",
+    "x": 308563.4386,
+    "y": 276047.75
+  },
+  {
+    "name": "Connolly Hospital Dublin",
+    "address": "Mill Road, Dublin 15,",
+    "eircode": "D15X40D",
+    "x": 308545.2076,
+    "y": 238839.27
+  },
+  {
+    "name": "Beaumont Hospital",
+    "address": "Beaumont Road, Dublin 9,",
+    "eircode": "D09C562",
+    "x": 318014.4006,
+    "y": 239461.7999
+  },
+  {
+    "name": "St Luke's General Hospital Kilkenny",
+    "address": "Freshford Road, Kilkenny,",
+    "eircode": "R95FY71",
+    "x": 249849.5305,
+    "y": 157441.6319
+  },
+  {
+    "name": "Wexford General Hospital",
+    "address": "Newtown Road, Wexford, Y35y17d",
+    "eircode": "",
+    "x": 303401.8406,
+    "y": 122304.6848
+  },
+  {
+    "name": "Our Lady's Hospital Navan",
+    "address": "Navan, Co. Meath,",
+    "eircode": "C15RK7Y",
+    "x": 286123.9386,
+    "y": 267517.563
+  },
+  {
+    "name": "Midland Regional Hospital Mullingar",
+    "address": "Longford Road, Mullingar, Co. Westmeath,",
+    "eircode": "N91NA43",
+    "x": 243131.5005,
+    "y": 254000.7
+  },
+  {
+    "name": "St Columcille's Hospital",
+    "address": "Bray Road, Loughlinstown, Co. Dublin,",
+    "eircode": "D18V9K1",
+    "x": 324650.0136,
+    "y": 223005.9479
+  },
+  {
+    "name": "St Vincent's University Hospital",
+    "address": "Elm Park, Nutley Lane, Dublin 4,",
+    "eircode": "D04T6F4",
+    "x": 319049.9696,
+    "y": 231076.2339
+  },
+  {
+    "name": "St Michael's Hospital Dun Laoghaire",
+    "address": "George's Street Lower, Dun Laoghaire, Co. Dublin,",
+    "eircode": "A96P902",
+    "x": 324095.6746,
+    "y": 228667.4989
+  },
+  {
+    "name": "Mater Misericordiae Hospital",
+    "address": "Eccles Street, Dublin 7,",
+    "eircode": "D07R2WY",
+    "x": 315270.9066,
+    "y": 235749.3699
+  },
+  {
+    "name": "South Tipperary General Hospital",
+    "address": "Western Road, Clonmel, Co. Tipperary,",
+    "eircode": "E91VY40",
+    "x": 219438.4595,
+    "y": 122665.8848
+  },
+  {
+    "name": "University Hospital Waterford",
+    "address": "Dunmore Road, Waterford,",
+    "eircode": "X91ER8E",
+    "x": 262910.9695,
+    "y": 111129.5228
+  },
+  {
+    "name": "Bantry General Hospital",
+    "address": "Carrignagat, Bantry, Co. Cork,",
+    "eircode": "P75DX93",
+    "x": 99695.28536,
+    "y": 48014.02974
+  },
+  {
+    "name": "Cork University Hospital",
+    "address": "Wilton, Cork,",
+    "eircode": "T12DC4A",
+    "x": 164819.4034,
+    "y": 70216.09277
+  },
+  {
+    "name": "Mallow General Hospital",
+    "address": "Kilknockin, Mallow, Co. Cork,",
+    "eircode": "P51N288",
+    "x": 154551.0944,
+    "y": 100117.7888
+  },
+  {
+    "name": "Ennis Hospital",
+    "address": "Gort Road, Ennis, Co. Clare,",
+    "eircode": "V95HN29",
+    "x": 133732.5354,
+    "y": 178235.0779
+  },
+  {
+    "name": "Roscommon County Hospital",
+    "address": "Ardsallagh Beg, Co. Roscommon,",
+    "eircode": "F42AX61",
+    "x": 188388.3285,
+    "y": 263899.813
+  },
+  {
+    "name": "Mercy University Hospital",
+    "address": "Grenville Place, Cork,",
+    "eircode": "T12WE28",
+    "x": 166764.5734,
+    "y": 71915.37076
+  },
+  {
+    "name": "Nenagh Hospital",
+    "address": "Tyone, Nenagh, Co. Tipperary,",
+    "eircode": "E45PT86",
+    "x": 187094.4565,
+    "y": 178527.3649
+  },
+  {
+    "name": "Sligo Regional Hospital",
+    "address": "The Mall, Sligo,",
+    "eircode": "F91H684",
+    "x": 169786.3464,
+    "y": 336269.7351
+  },
+  {
+    "name": "University Hospital Galway",
+    "address": "Newcastle Road, Galway,",
+    "eircode": "H91YR71",
+    "x": 128926.2994,
+    "y": 225582.2939
+  },
+  {
+    "name": "Portiuncula Hospital",
+    "address": "Ballinasloe, Co. Galway,",
+    "eircode": "H53T971",
+    "x": 184339.0425,
+    "y": 230731.3919
+  },
+  {
+    "name": "South Infirmary Victoria University Hospital",
+    "address": "Old Blackrock Road, Cork,",
+    "eircode": "T12X23H",
+    "x": 168045.1354,
+    "y": 71328.93777
+  },
+  {
+    "name": "St John's Hospital",
+    "address": "St. John's Square, Limerick",
+    "eircode": "",
+    "x": 158298.4279,
+    "y": 157008.8367
+  },
+  {
+    "name": "Letterkenny University Hospital",
+    "address": "Kilmacrennan Road, Letterkenny, Co. Donegal,",
+    "eircode": "F92AE81",
+    "x": 216990.1175,
+    "y": 412551.1811
+  },
+  {
+    "name": "Merlin Park University Hospital",
+    "address": "Galway,",
+    "eircode": "H91N973",
+    "x": 133719.3214,
+    "y": 225686.7119
+  },
+  {
+    "name": "University Hospital Kerry",
+    "address": "Tralee, Co. Kerry,",
+    "eircode": "V92NX94",
+    "x": 84653.57835,
+    "y": 113945.3278
+  },
+  {
+    "name": "University Hospital Limerick",
+    "address": "Saint Nessan's Road, Dooradoyle, Limerick,",
+    "eircode": "V94F858",
+    "x": 155741.1214,
+    "y": 154029.2699
+  },
+  {
+    "name": "Mayo General Hospital",
+    "address": "Westport Road, Castlebar, Co. Mayo,",
+    "eircode": "F23H529",
+    "x": 114195.8524,
+    "y": 289970.125
+  }
+]

@@ -29,7 +29,6 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initialSetup()
     }
 
@@ -63,7 +62,6 @@ class HomeViewController: BaseViewController {
     @IBAction func touchUpOutsideEmergency(_ sender: UIButton) {
         stopEmergency()
     }
-
 
     //MARK:- Private
     private func updateTitle(type : HomeViewModel.DataType){
