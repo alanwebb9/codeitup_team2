@@ -11,12 +11,12 @@ extension APIManager {
 
     enum EndPoint : String {
 
-        case getDetails
+        case forgetPassword
         
         var path : String {
 
-            let url = "http://johnsonjohnsonhackathon.herokuapp.com/"
-            return url + rawValue
+            let url = ""
+            return url + self.rawValue
         }
     }
 }

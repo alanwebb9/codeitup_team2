@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-johnson-johnson/Pods-johnson-johnson-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-hackathon/Pods-hackathon-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

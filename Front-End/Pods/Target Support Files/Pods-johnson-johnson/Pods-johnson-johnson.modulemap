@@ -1,6 +1,0 @@
-framework module Pods_johnson_johnson {
-  umbrella header "Pods-johnson-johnson-umbrella.h"
-
-  export *
-  module * { export * }
-}

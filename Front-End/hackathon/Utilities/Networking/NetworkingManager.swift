@@ -63,7 +63,18 @@ class NetworkingManager {
                 
             case .success(let value):
                 let json = JSON(value)
-                success(json)
+                if json["CODE"].intValue == 200{
+                    success(json)
+                }else{
+                    let error = NSError(domain: "", code: json["CODE"].intValue, userInfo: [NSLocalizedDescriptionKey : json["MESSAGE"].stringValue, "response": json["RESULT"].dictionaryValue])
+
+//                    if error.code == ErrorCodes.accountBlocked{
+//                        FlowManager.clearAllData()
+//                        FlowManager.goToLogin()
+//                    }else{
+                        failure(error)
+//                    }
+                }
             case .failure(let e):
                 failure(e)
             }

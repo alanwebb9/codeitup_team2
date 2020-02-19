@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_johnson_johnsonVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_johnson_johnsonVersionString[];
+FOUNDATION_EXPORT double Pods_hackathonVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_hackathonVersionString[];
 
