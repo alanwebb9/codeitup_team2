@@ -101,55 +101,46 @@ class HomeViewModel{
     }
 
     //MARK:- Private
-    private func readFromFireStationCSV(){
+    private func readCSV(name : String)->JSON?{
 
-        if let path = Bundle.main.path(forResource: "fireStation", ofType: "json") {
+        if let path = Bundle.main.path(forResource: name, ofType: "json") {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
                 if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
                     if let jsonResult = jsonResult as? [[String : Any]]{
-                        fireStations = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                        return JSON(jsonResult)
                     }
                 }
             }
         }
+
+        return nil
+    }
+
+    private func readFromFireStationCSV(){
+
+        let json = readCSV(name: "fireStation")
+        guard let tempJson = json else {return}
+        fireStations = tempJson.arrayValue.map{FireStationModel(json: $0)}
     }
 
     private func readFromHospitals(){
 
-        if let path = Bundle.main.path(forResource: "hospitals", ofType: "json") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
-                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
-                    if let jsonResult = jsonResult as? [[String : Any]]{
-                        hospitals = JSON(jsonResult).arrayValue.map{HospitalModel(json: $0)}
-                    }
-                }
-            }
-        }
+        let json = readCSV(name: "hospitals")
+        guard let tempJson = json else {return}
+        hospitals = tempJson.arrayValue.map{HospitalModel(json: $0)}
     }
 
     private func readPharmacy(){
 
-        if let path = Bundle.main.path(forResource: "pharmacy", ofType: "json") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
-                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
-                    if let jsonResult = jsonResult as? [[String : Any]]{
-                        pharmacy = JSON(jsonResult).arrayValue.map{PharmacyModel(json: $0)}
-                    }
-                }
-            }
-        }
+        let json = readCSV(name: "pharmacy")
+        guard let tempJson = json else {return}
+        pharmacy = tempJson.arrayValue.map{PharmacyModel(json: $0)}
     }
 
     private func readGarda(){
 
-        if let path = Bundle.main.path(forResource: "garda", ofType: "json") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
-                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
-                    if let jsonResult = jsonResult as? [[String : Any]]{
-                        garda = JSON(jsonResult).arrayValue.map{GardaModel(json: $0)}
-                    }
-                }
-            }
-        }
+        let json = readCSV(name: "garda")
+        guard let tempJson = json else {return}
+        garda = tempJson.arrayValue.map{GardaModel(json: $0)}
     }
 }

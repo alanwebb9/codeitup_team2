@@ -1,1 +1,1 @@
-web: gunicorn app:app --log-level debug --log-file=/app/flaskapp.log
+web: gunicorn src.app:app --log-level debug --log-file=/app/flaskapp.log
