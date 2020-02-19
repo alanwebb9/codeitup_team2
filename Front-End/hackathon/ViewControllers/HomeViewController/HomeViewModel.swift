@@ -94,7 +94,7 @@ class HomeViewModel{
         case .pharmacy:
             pinDataArray = pharmacy
         default:
-            pinDataArray = []
+            pinDataArray = all
         }
 
         delegate?.reloadData()

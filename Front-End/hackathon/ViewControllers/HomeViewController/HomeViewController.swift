@@ -44,6 +44,7 @@ class HomeViewController: BaseViewController {
 
         super.viewDidAppear(animated)
         if firstTime{
+            viewModel.updateData()
             Utilities.showTutorial(on: emergencyButton, primaryText: "Emergency Button!", secondaryText: "Press and hold for 3 seconds to send a message to the cops!", isCircle: true, delegate: self, uniqueIdentifier: 0, completion: nil)
             firstTime = false
         }
