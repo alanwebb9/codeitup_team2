@@ -33,20 +33,11 @@ class HomeViewModel{
     }
 
     var delegate : HomeViewModelDelegate?
-    private var pinDataArray = [AnnotationData]()
+    var pinDataArray = [AnnotationData]()
     var type = DataType.all
 
     init(){
-
-        if let path = Bundle.main.path(forResource: "fireStation", ofType: "json") {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
-                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
-                    if let jsonResult = jsonResult as? [[String : Any]]{
-                        pinDataArray = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
-                    }
-                }
-            }
-        }
+        readFromFireStationCSV()
     }
 
     func nextType() -> DataType{
@@ -58,7 +49,8 @@ class HomeViewModel{
         }else{
             self.type = DataType.init(rawValue: self.type.rawValue + 1) ?? .all
         }
-        delegate?.reloadData()
+
+        updateData()
         return self.type
     }
 
@@ -71,7 +63,33 @@ class HomeViewModel{
         }else{
             self.type = DataType.init(rawValue: self.type.rawValue - 1) ?? .all
         }
-        delegate?.reloadData()
+        updateData()
         return self.type
+    }
+
+    func updateData(){
+
+        switch type {
+        case .fireStations:
+            readFromFireStationCSV()
+        default:
+            pinDataArray = []
+        }
+
+        delegate?.reloadData()
+    }
+
+    //MARK:- Private
+    private func readFromFireStationCSV(){
+
+        if let path = Bundle.main.path(forResource: "fireStation", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        pinDataArray = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                    }
+                }
+            }
+        }
     }
 }

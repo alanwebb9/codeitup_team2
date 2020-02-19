@@ -67,7 +67,6 @@ class NetworkingManager {
                     success(json)
                 }else{
                     let error = NSError(domain: "", code: json["code"].intValue, userInfo: [NSLocalizedDescriptionKey : StringConstants.something_wrong.localized, "data": json["data"].dictionaryValue])
-
                     failure(error)
                 }
             case .failure(let e):

@@ -7,6 +7,7 @@
 //
 
 import FontAwesome_swift
+import Contacts
 import MapKit
 import UIKit
 
@@ -22,7 +23,7 @@ class HomeViewController: BaseViewController {
     private let viewModel = HomeViewModel()
     private var workItem : DispatchWorkItem?
     private var coordinate : CLLocationCoordinate2D?
-    private let radius = 1000.0
+    private let radius = 20000.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,7 @@ class HomeViewController: BaseViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         LocationManager.shared.delegate = self
         mapView.showsUserLocation = true
+        mapView.delegate = self
 
         viewModel.delegate = self
 
@@ -96,7 +98,6 @@ class HomeViewController: BaseViewController {
     private func show(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
         mapView.setRegion(coordinateRegion, animated: true)
-        dropPin(coordinate: coordinate, title: title, subTitle: subTitle)
     }
 
     private func focus(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
@@ -109,8 +110,6 @@ class HomeViewController: BaseViewController {
         workItem = item
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: item)
     }
-
-
 
     private func dropPin(coordinate : CLLocationCoordinate2D, title : String?, subTitle : String?){
 
@@ -136,6 +135,40 @@ extension HomeViewController : HomeViewModelDelegate{
 
     func reloadData() {
 
-        
+        mapView.removeAnnotations(mapView.annotations)
+        viewModel.pinDataArray.forEach { [weak self] (annotation) in
+            let coordinate = CLLocationCoordinate2D(latitude: annotation.lat, longitude: annotation.long)
+            self?.dropPin(coordinate: coordinate, title: annotation.name, subTitle: annotation.subtitle)
+        }
+    }
+}
+
+extension HomeViewController : MKMapViewDelegate{
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+        guard let annotation = annotation as? Annotation else { return nil }
+        let identifier = "marker"
+        var view: MKMarkerAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            as? MKMarkerAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
+        } else {
+            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        return view
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
+        guard let location = view.annotation as? Annotation else {return}
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let placemark = MKPlacemark(coordinate: location.coordinate, addressDictionary: [CNPostalAddressStreetKey : location.subtitle ?? ""])
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.openInMaps(launchOptions: launchOptions)
     }
 }

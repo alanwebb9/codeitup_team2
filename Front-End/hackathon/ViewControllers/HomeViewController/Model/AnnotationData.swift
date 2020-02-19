@@ -13,4 +13,5 @@ protocol AnnotationData{
     var lat : Double {get set}
     var long : Double {get set}
     var name : String {get set}
+    var subtitle : String {get set}
 }

@@ -21,6 +21,7 @@ struct FireStationModel : AnnotationData{
     var phone : String
     var email : String
     var website : String
+    var subtitle : String
 
     init(json : JSON) {
 
@@ -34,5 +35,7 @@ struct FireStationModel : AnnotationData{
         website = json["Website"].stringValue
         lat = json["LAT"].doubleValue
         long = json["LONG"].doubleValue
+
+        subtitle = [address1, address2, address3, address4].joined(separator: ", ")
     }
 }

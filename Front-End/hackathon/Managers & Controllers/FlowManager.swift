@@ -22,27 +22,8 @@ class FlowManager{
 
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.extendedLayoutIncludesOpaqueBars = true
-        navigationController.automaticallyAdjustsScrollViewInsets = false
         navigationController.setNavigationBarHidden(true, animated: false)
         return navigationController
-    }
-
-    static func gotToLandingScreen(){
-
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let tabbar = storyboard.instantiateViewController(withIdentifier: "CustomTabBarController") as? CustomTabBarController else {return}
-//
-//        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
-//        window?.rootViewController = tabbar
-//        window?.makeKeyAndVisible()
-    }
-    
-    static func goToLogin(){
-
-//        let viewController = WelcomeViewController.instantiate(fromAppStoryboard: .Main)
-//        let window = (UIApplication.shared.delegate as? AppDelegate)?.window
-//        window?.rootViewController = viewController
-//        window?.makeKeyAndVisible()
     }
 
     static func clearAllData(){
