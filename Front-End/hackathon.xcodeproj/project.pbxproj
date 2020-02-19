@@ -42,6 +42,7 @@
 		4604F33223FD5F3300E13FBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33123FD5F3300E13FBF /* HomeViewController.swift */; };
 		4604F33423FD617400E13FBF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33323FD617300E13FBF /* LocationManager.swift */; };
 		4604F33723FD647A00E13FBF /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33623FD647A00E13FBF /* Annotation.swift */; };
+		4604F33923FD76A100E13FBF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33823FD76A100E13FBF /* HomeViewModel.swift */; };
 		A88EDCB39CD9AE1649611B3E /* Pods_hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		4604F33123FD5F3300E13FBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4604F33323FD617300E13FBF /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		4604F33623FD647A00E13FBF /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		4604F33823FD76A100E13FBF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		46A331F621FB80AD00890F1A /* hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC6E150F4D6CA33BAE8295 /* Pods-hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackathon.release.xcconfig"; path = "Target Support Files/Pods-hackathon/Pods-hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 			children = (
 				4604F33523FD647500E13FBF /* Model */,
 				4604F33123FD5F3300E13FBF /* HomeViewController.swift */,
+				4604F33823FD76A100E13FBF /* HomeViewModel.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				4604F31923FD5BA300E13FBF /* KeyboardHandler.swift in Sources */,
 				4604F32A23FD5BA300E13FBF /* Colors.swift in Sources */,
 				4604F33423FD617400E13FBF /* LocationManager.swift in Sources */,
+				4604F33923FD76A100E13FBF /* HomeViewModel.swift in Sources */,
 				4604F32523FD5BA300E13FBF /* String+General.swift in Sources */,
 				4604F31D23FD5BA300E13FBF /* StringConstants.swift in Sources */,
 				4604F31A23FD5BA300E13FBF /* AuthorizationProtocol.swift in Sources */,
