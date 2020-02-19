@@ -83,19 +83,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOS-RJ-EIk">
                                 <rect key="frame" x="0.0" y="558.5" width="375" height="93.5"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5u-sq-2y4" customClass="MRRippleView" customModule="hackathon" customModuleProvider="target">
+                                        <rect key="frame" x="140.5" y="0.0" width="94" height="93.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lp-pp-Xdb">
                                         <rect key="frame" x="140.5" y="0.0" width="94" height="93.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7Lp-pp-Xdb" secondAttribute="height" multiplier="1:1" id="3Tu-Q3-28u"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="touchDownEmergency:" destination="BYZ-38-t0r" eventType="touchDown" id="RQi-LP-Gjo"/>
+                                            <action selector="touchUpEmergency:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lnK-k1-Oho"/>
+                                            <action selector="touchUpOutsideEmergency:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="vo7-JD-Fdr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="7Lp-pp-Xdb" firstAttribute="top" secondItem="zOS-RJ-EIk" secondAttribute="top" id="8Th-L7-3KH"/>
                                     <constraint firstItem="7Lp-pp-Xdb" firstAttribute="centerX" secondItem="zOS-RJ-EIk" secondAttribute="centerX" id="IyF-1h-W5w"/>
+                                    <constraint firstItem="Y5u-sq-2y4" firstAttribute="bottom" secondItem="7Lp-pp-Xdb" secondAttribute="bottom" id="TQJ-hv-Qt4"/>
                                     <constraint firstAttribute="bottom" secondItem="7Lp-pp-Xdb" secondAttribute="bottom" id="cIX-Wd-D4g"/>
+                                    <constraint firstItem="Y5u-sq-2y4" firstAttribute="trailing" secondItem="7Lp-pp-Xdb" secondAttribute="trailing" id="htY-tu-FnA"/>
+                                    <constraint firstItem="Y5u-sq-2y4" firstAttribute="leading" secondItem="7Lp-pp-Xdb" secondAttribute="leading" id="vdr-Wr-k50"/>
+                                    <constraint firstItem="Y5u-sq-2y4" firstAttribute="top" secondItem="7Lp-pp-Xdb" secondAttribute="top" id="xnG-nE-y3v"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -122,6 +135,7 @@
                         <outlet property="leftButton" destination="MM8-bb-ARa" id="NZv-bP-PGG"/>
                         <outlet property="mapView" destination="tQa-Ap-FBk" id="BWe-hw-iJk"/>
                         <outlet property="rightButton" destination="xXN-9x-zHM" id="0WA-uv-EC3"/>
+                        <outlet property="rippleView" destination="Y5u-sq-2y4" id="WZP-Se-LR1"/>
                         <outlet property="titleView" destination="Msh-tk-ZpM" id="4AM-0n-qQR"/>
                         <outlet property="typeTextField" destination="hCz-sM-1Br" id="7HU-i1-cqW"/>
                     </connections>

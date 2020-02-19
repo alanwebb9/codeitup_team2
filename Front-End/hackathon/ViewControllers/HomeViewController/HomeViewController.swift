@@ -13,6 +13,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var rippleView: MRRippleView!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var emergencyButton: UIButton!
     @IBOutlet weak var typeTextField: UITextField!
@@ -45,6 +46,19 @@ class HomeViewController: BaseViewController {
     @IBAction func rightAction(_ sender: UIButton) {
         updateTitle(type: viewModel.nextType())
     }
+
+    @IBAction func touchDownEmergency(_ sender: UIButton) {
+        rippleView.start = true
+    }
+
+    @IBAction func touchUpEmergency(_ sender: UIButton) {
+        rippleView.start = false
+    }
+
+    @IBAction func touchUpOutsideEmergency(_ sender: UIButton) {
+        rippleView.start = false
+    }
+
 
     //MARK:- Private
     private func updateTitle(type : HomeViewModel.DataType){

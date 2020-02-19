@@ -45,6 +45,7 @@
 		4604F33B23FD7CE400E13FBF /* fireStation.json in Resources */ = {isa = PBXBuildFile; fileRef = 4604F33A23FD7CE400E13FBF /* fireStation.json */; };
 		4604F33D23FD7D7700E13FBF /* FireStationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33C23FD7D7700E13FBF /* FireStationModel.swift */; };
 		4604F33F23FD804300E13FBF /* AnnotationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F33E23FD804300E13FBF /* AnnotationData.swift */; };
+		4604F34123FD8EC700E13FBF /* MRRippleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604F34023FD8EC700E13FBF /* MRRippleView.swift */; };
 		A88EDCB39CD9AE1649611B3E /* Pods_hackathon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		4604F33A23FD7CE400E13FBF /* fireStation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fireStation.json; sourceTree = "<group>"; };
 		4604F33C23FD7D7700E13FBF /* FireStationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStationModel.swift; sourceTree = "<group>"; };
 		4604F33E23FD804300E13FBF /* AnnotationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationData.swift; sourceTree = "<group>"; };
+		4604F34023FD8EC700E13FBF /* MRRippleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRRippleView.swift; sourceTree = "<group>"; };
 		46A331F621FB80AD00890F1A /* hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CC6E150F4D6CA33BAE8295 /* Pods-hackathon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hackathon.release.xcconfig"; path = "Target Support Files/Pods-hackathon/Pods-hackathon.release.xcconfig"; sourceTree = "<group>"; };
 		A90C3BE94843CCCEE92DD3AA /* Pods_hackathon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hackathon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				4604F30323FD5BA300E13FBF /* Activity Indicator */,
+				4604F34023FD8EC700E13FBF /* MRRippleView.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				4604F32323FD5BA300E13FBF /* UITextField + General.swift in Sources */,
 				4604F33723FD647A00E13FBF /* Annotation.swift in Sources */,
 				4604F31323FD5BA300E13FBF /* FlowManager.swift in Sources */,
+				4604F34123FD8EC700E13FBF /* MRRippleView.swift in Sources */,
 				4604F32223FD5BA300E13FBF /* UIImageView + Download.swift in Sources */,
 				4604F31523FD5BA300E13FBF /* ActionSheetProtocol.swift in Sources */,
 				4604F31723FD5BA300E13FBF /* TableViewHeaderFooterResizeProtocol.swift in Sources */,
