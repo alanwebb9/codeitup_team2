@@ -6,7 +6,13 @@
 //  Copyright © 2020 Mayank Rikh. All rights reserved.
 //
 
+import SwiftyJSON
 import Foundation
+
+protocol HomeViewModelDelegate : class{
+
+    func reloadData()
+}
 
 class HomeViewModel{
 
@@ -26,7 +32,13 @@ class HomeViewModel{
         }
     }
 
+    var delegate : HomeViewModelDelegate?
+    var pinDataArray = [AnnotationData]()
     var type = DataType.all
+
+    init(){
+        readFromFireStationCSV()
+    }
 
     func nextType() -> DataType{
 
@@ -38,6 +50,7 @@ class HomeViewModel{
             self.type = DataType.init(rawValue: self.type.rawValue + 1) ?? .all
         }
 
+        updateData()
         return self.type
     }
 
@@ -50,7 +63,33 @@ class HomeViewModel{
         }else{
             self.type = DataType.init(rawValue: self.type.rawValue - 1) ?? .all
         }
-
+        updateData()
         return self.type
+    }
+
+    func updateData(){
+
+        switch type {
+        case .fireStations:
+            readFromFireStationCSV()
+        default:
+            pinDataArray = []
+        }
+
+        delegate?.reloadData()
+    }
+
+    //MARK:- Private
+    private func readFromFireStationCSV(){
+
+        if let path = Bundle.main.path(forResource: "fireStation", ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe){
+                if let jsonResult = try? JSONSerialization.jsonObject(with: data, options: .mutableLeaves){
+                    if let jsonResult = jsonResult as? [[String : Any]]{
+                        pinDataArray = JSON(jsonResult).arrayValue.map{FireStationModel(json: $0)}
+                    }
+                }
+            }
+        }
     }
 }

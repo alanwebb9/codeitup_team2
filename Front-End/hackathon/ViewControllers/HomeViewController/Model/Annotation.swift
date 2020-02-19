@@ -12,14 +12,14 @@ import MapKit
 class Annotation : NSObject, MKAnnotation{
 
     let title : String?
-    let subTitle : String?
+    let subtitle: String?
 
     let coordinate : CLLocationCoordinate2D
 
     init(title : String?, subTitle : String?, coordinate : CLLocationCoordinate2D){
 
         self.title = title
-        self.subTitle = subTitle
+        self.subtitle = subTitle
         self.coordinate = coordinate
     }
 }

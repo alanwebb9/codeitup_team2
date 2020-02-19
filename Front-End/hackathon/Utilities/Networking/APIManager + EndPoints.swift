@@ -11,12 +11,12 @@ extension APIManager {
 
     enum EndPoint : String {
 
-        case forgetPassword
+        case getFireList
         
         var path : String {
 
             let url = ""
-            return url + self.rawValue
+            return url + rawValue
         }
     }
 }

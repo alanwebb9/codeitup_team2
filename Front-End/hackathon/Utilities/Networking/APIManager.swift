@@ -11,9 +11,16 @@ import SwiftyJSON
 
 class APIManager {
 
-    static var headers : [String : String]{
+    static func getFireList(params : [String : Any], completion: ((JSON?, Error?)->())?){
 
-        return ["":""]
+        NetworkingManager.GET(endPoint: .getFireList, parameters: params, headers : headers, success: { (dict) in
+            completion?(JSON(dict), nil)
+        }) { (error) in
+            completion?(nil, error)
+        }
     }
 
+    static var headers : [String : String]{
+        return ["":""]
+    }
 }
