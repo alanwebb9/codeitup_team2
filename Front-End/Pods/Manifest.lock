@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - DZNEmptyDataSet (1.8.1)
   - FontAwesome.swift (1.8.3)
+  - MaterialShowcase (0.7.1)
   - SDWebImage (5.4.0):
     - SDWebImage/Core (= 5.4.0)
   - SDWebImage/Core (5.4.0)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - Alamofire
   - DZNEmptyDataSet
   - FontAwesome.swift
+  - MaterialShowcase
   - SDWebImage
   - SwiftyJSON
 
@@ -19,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - DZNEmptyDataSet
     - FontAwesome.swift
+    - MaterialShowcase
     - SDWebImage
     - SwiftyJSON
 
@@ -26,9 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FontAwesome.swift: 2a3235131a6caffc6b2ccba318e94d793b2fd342
+  MaterialShowcase: baaca60627058085d6b304f5a30ee952e99cee21
   SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 5dffd70abe4af3f6ec16ae26087fa1db1f721c24
+PODFILE CHECKSUM: 7c8de1c60649ffd66a5dee6be391af82f048461b
 
 COCOAPODS: 1.8.4

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mayank Rikh. All rights reserved.
 //
 
+import MaterialShowcase
 import FontAwesome_swift
 import Contacts
 import MapKit
@@ -26,6 +27,7 @@ class HomeViewController: BaseViewController {
     private var coordinate : CLLocationCoordinate2D?
     private let radius = 20000.0
     private var timer : Timer?
+    private var firstTime = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,15 @@ class HomeViewController: BaseViewController {
 
         super.viewDidLayoutSubviews()
         emergencyButton.layer.cornerRadius = emergencyButton.bounds.height/2.0
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+        if firstTime{
+            Utilities.showTutorial(on: emergencyButton, primaryText: "Emergency Button!", secondaryText: "Press and hold for 3 seconds to send a message to the cops!", isCircle: true, delegate: self, uniqueIdentifier: 0, completion: nil)
+            firstTime = false
+        }
     }
 
     //MARK:- IBAction
@@ -193,5 +204,13 @@ extension HomeViewController : MKMapViewDelegate{
         let placemark = MKPlacemark(coordinate: location.coordinate, addressDictionary: [CNPostalAddressStreetKey : location.subtitle ?? ""])
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: launchOptions)
+    }
+}
+
+extension HomeViewController : MaterialShowcaseDelegate{
+
+    func showCaseDidDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+
+
     }
 }
