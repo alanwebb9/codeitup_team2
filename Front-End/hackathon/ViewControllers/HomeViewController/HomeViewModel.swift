@@ -21,7 +21,7 @@ class HomeViewModel{
             case .all : return StringConstants.all.localized
             case .fireStations : return StringConstants.fireStations.localized
             case .hospitals : return StringConstants.hospitals.localized
-            case .pharmacy : StringConstants.pharmacy.localized
+            case .pharmacy : return StringConstants.pharmacy.localized
             }
         }
     }
