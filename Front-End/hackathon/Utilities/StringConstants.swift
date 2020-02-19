@@ -10,12 +10,11 @@ import Foundation
 
 struct StringConstants{
 
-    //Login Flow
-    static let forgot_pass = "forgot_pass"
-    static let invalid_password = "invalid_password"
-    static let name_empty_error = "name_empty_error"
-    static let invalid_email = "invalid_email"
-    static let email_not_empty = "email_not_empty"
+    //Home
+    static let all = "all"
+    static let fireStations = "fireStations"
+    static let hospitals = "hospitals"
+    static let pharmacy = "pharmacy"
 
     //General
     static let something_wrong = "something_wrong"
