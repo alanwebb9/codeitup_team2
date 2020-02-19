@@ -1,14 +1,9 @@
 import mysql.connector
-
-
-
 def databaseConnection():
     conn = mysql.connector.connect(
-    user = 'b4170710f26515',
-    password = '5009ee16',
+    user = 'b0e8e4e2396307',
+    password = 'cb5f6e7f',
     host = 'eu-cdbr-west-02.cleardb.net',
     port = 3306,
-    database = 'heroku_4bdc9a2b0a22fb2')
+    database = 'heroku_a7b70b2a9badd9d')
     return conn
-
-db = databaseConnection()

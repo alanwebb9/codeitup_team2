@@ -3,9 +3,9 @@ import database
 def getDetails():
     gardaDictionary = {}
     gardaArray = []
-    dbconn = database.db
+    dbconn = database.databaseConnection()
     cursor = dbconn.cursor()
-    query = "select * from gardaDetails;"
+    query = "select * from gardadetails;"
     cursor.execute(query)
     data = cursor.fetchall()
     for row in data:

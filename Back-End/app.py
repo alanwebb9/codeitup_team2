@@ -2,28 +2,39 @@ from flask import Flask, url_for, request, jsonify
 import requests, csv
 import mysql.connector
 import os
-import fireDetails
 import database
-import hospitalDetails,gardaDetails
+import HospitalDetails,GardaDetails,FireDetails,NursingHomes,PharmaDetails
 app = Flask(__name__)
+
 
 @app.route("/getFireList", methods =['GET'])
 def getFireDetails():
     fireDetailsDictionary = {}
-    fireDetailsDictionary = jsonify(fireDetails.getDetails())
+    fireDetailsDictionary = jsonify(FireDetails.getDetails())
     return fireDetailsDictionary
 
+@app.route("/getNursingHomesList", methods =['GET'])
+def getNursingHomesDetails():
+    nursingHomesDetailsDictionary = {}
+    nursingHomesDetailsDictionary = jsonify(NursingHomes.getDetails())
+    return nursingHomesDetailsDictionary
+
+@app.route("/getPharmaList", methods =['GET'])
+def getPharmaDetails():
+    pharmaDetailsDictionary = {}
+    pharmaDetailsDictionary = jsonify(PharmaDetails.getDetails())
+    return pharmaDetailsDictionary
 
 @app.route("/getHospitalList", methods =['GET'])
 def getHospitalDetails():
     hospitalDetailsDictionary = {}
-    hospitalDetailsDictionary = jsonify(hospitalDetails.getDetails())
+    hospitalDetailsDictionary = jsonify(HospitalDetails.getDetails())
     return hospitalDetailsDictionary
 
 @app.route("/getGardaList", methods =['GET'])
 def getGardaDetails():
     gardaDetailsDictionary = {}
-    gardaDetailsDictionary = jsonify(gardaDetails.getDetails())
+    gardaDetailsDictionary = jsonify(GardaDetails.getDetails())
     return gardaDetailsDictionary
 
 

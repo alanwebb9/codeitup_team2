@@ -15,7 +15,7 @@ def getDetails():
     print("Enter")
     fireDictionary = {}
     fireArray = []
-    dbconn = database.db
+    dbconn = database.databaseConnection()
     cursor = dbconn.cursor()
     query = "select * from fireStationDetails;"
     cursor.execute(query)

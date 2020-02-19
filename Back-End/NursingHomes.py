@@ -4,7 +4,7 @@ def getDetails():
     print("Enter")
     nursingDictionary = {}
     nursingArray = []
-    dbconn = database.db
+    dbconn = database.databaseConnection()
     cursor = dbconn.cursor()
     query = "select * from nursinghomesdetails;"
     cursor.execute(query)

@@ -4,9 +4,9 @@ def getDetails():
     print("Enter")
     hospitalDictionary = {}
     hospitalArray = []
-    dbconn = database.db
+    dbconn = database.databaseConnection()
     cursor = dbconn.cursor()
-    query = "select * from hospitalDetails;"
+    query = "select * from hospitaldetails;"
     cursor.execute(query)
     data = cursor.fetchall()
     for row in data:
